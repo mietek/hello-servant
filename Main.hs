@@ -1,10 +1,11 @@
+{-#LANGUAGE DataKinds, OverloadedStrings #-}
 import Data.Proxy
 import Data.Text
 import Network.Wai.Handler.Warp
 import Servant
 import System.Environment
 
-type Hello = Get Text
+type Hello = Get '[PlainText] Text
 
 server :: Server Hello
 server = return "Hello, world!"
